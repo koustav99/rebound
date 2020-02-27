@@ -166,7 +166,7 @@ def execute(command):
     if command[0] == "cplusplus":
        command = "g++ -o exec "+command[1]
     else:
-        command = "".join(command)
+        command = " ".join(command)
     process = Popen(
         command,
         cwd=None,
