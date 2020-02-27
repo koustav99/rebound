@@ -95,6 +95,8 @@ def get_language(file_path):
         return 'javac' # Compile Java Source File
     elif file_path.endswith(".class"):
         return 'java' # Run Java Class File
+    elif file_path.endswith(".cpp"):
+        return "cplusplus"
     else:
         return '' # Unknown language
 
@@ -160,6 +162,8 @@ def write(get):
 def execute(command):
     """Executes a given command and clones stdout/err to both variables and the
     terminal (in real-time)."""
+    if command[0] == "cplusplus":
+       command[0] = "g++ -o exec" 
     process = Popen(
         command,
         cwd=None,
@@ -853,6 +857,7 @@ def main():
         file_path = sys.argv[1:]
         if language == 'java':
             file_path = [f.replace('.class', '') for f in file_path]
+        
         output, error = execute([language] + file_path) # Compiles the file and pipes stdout
         if (output, error) == (None, None): # Invalid file
             return
