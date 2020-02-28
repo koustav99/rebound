@@ -163,10 +163,8 @@ def execute(command):
     """Executes a given command and clones stdout/err to both variables and the
     terminal (in real-time)."""
     print(command)
-    if command[0] == "cplusplus":
-       command = "g++ -o exec "+command[1]
-    else:
-        command = " ".join(command)
+    fname=str(command[1])
+    command = "g++ "+fname
     process = Popen(
         command,
         cwd=None,
@@ -270,7 +268,6 @@ def get_search_results(soup):
         })
 
     return search_results
-
 
 def souper(url):
     """Turns a given URL into a BeautifulSoup object."""
