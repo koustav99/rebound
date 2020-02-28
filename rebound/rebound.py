@@ -164,7 +164,7 @@ def execute(command):
     terminal (in real-time)."""
     print(command)
     fname=str(command[1])
-    command = "g++ "+fname
+    command = "python3 "+fname
     process = Popen(
         command,
         cwd=None,
