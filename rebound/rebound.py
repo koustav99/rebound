@@ -163,8 +163,6 @@ def execute(command):
     """Executes a given command and clones stdout/err to both variables and the
     terminal (in real-time)."""
     print(command)
-    fname=str(command[1])
-    command = "python3 "+fname
     process = Popen(
         command,
         cwd=None,
