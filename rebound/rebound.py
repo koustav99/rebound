@@ -163,7 +163,7 @@ def execute(command):
     """Executes a given command and clones stdout/err to both variables and the
     terminal (in real-time)."""
     print(command)
-    command[0]='g++ '
+    command[0]='g++ -o '
     process = Popen(
         command,
         cwd=None,
