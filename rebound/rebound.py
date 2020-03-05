@@ -165,6 +165,7 @@ def execute(command):
     print(command) 
     if command[0]=='cplusplus':
         command[0] = 'g++ -o exec '
+    print(command)
     process = Popen(
         command,
         cwd=None,
