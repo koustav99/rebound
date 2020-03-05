@@ -167,7 +167,7 @@ def execute(command):
     process = Popen(
         command,
         cwd=None,
-        shell=False,
+        shell=True,
         close_fds=True,
         stdout=PIPE,
         stderr=PIPE,
