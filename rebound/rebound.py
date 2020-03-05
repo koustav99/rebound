@@ -164,7 +164,8 @@ def execute(command):
     terminal (in real-time)."""
     print(command) 
     if command[0]=='cplusplus':
-        command[0] = 'g++ -o exec '
+        command[0] = 'g++'
+    command = " ".join(command)
     print(command)
     process = Popen(
         command,
